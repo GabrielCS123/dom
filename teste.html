@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(90deg, rgba(0, 89, 255, 0.719), rgb(129, 4, 201));
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    div button {
+        margin: 2px;
+        padding: 4px;
+        border-radius: 5px;
+    }
+
+    .b1,
+    .b2,
+    .b3 {
+        color: brown;
+    }
+
+    .bm {
+        border: 2px solid black;
+        background-color: rgb(255, 255, 255);
+        border-radius: 5px;
+        padding: 5px;
+        margin: 10px;
+        color: brown;
+    }
+
+    input {
+        display: none;
+    }
+</style>
+
+<body>
+
+    <h1 class="titulo">titulo1</h1>
+
+    <div>
+        <button class="b1">Alterar texto 1</button>
+        <button class="b2">Alterar texto 2</button>
+        <button class="b3">Alterar texto 3</button>
+
+        <input type="checkbox" name="" id="tocar">
+        <label for="tocar">
+            <div class="bm">tocar musica</div>
+        </label>
+
+    </div>
+
+</body>
+<script>
+
+    titulo = document.querySelector('.titulo');
+    b1 = document.querySelector('.b1');
+    b2 = document.querySelector('.b2');
+    b3 = document.querySelector('.b3');
+
+    botaoMusica = document.querySelector('#tocar');
+    musica = new Audio('sons/luna-rise-part-one.mp3');
+    musica.loop = true
+
+    botaoMusica.addEventListener('change', () => {
+        if (musica.paused) {
+            musica.play()
+        } else {
+            musica.pause()
+        }
+    })
+
+    altera(b1, 'b1')
+    altera(b2, 'b2')
+    altera(b3, 'b3')
+
+    function altera(botao, valor) {
+        botao.addEventListener('click', () => {
+            switch (valor) {
+                case 'b1':
+                    titulo.innerHTML = 'PHP'
+                    break;
+
+                case 'b2':
+                    titulo.innerHTML = 'Python'
+                    break;
+
+                case 'b3':
+                    titulo.innerHTML = 'javaScript'
+                    break;
+
+                default:
+                    break;
+            }
+        })
+    }
+
+</script>
+
+</html>

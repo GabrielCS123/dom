@@ -56,11 +56,6 @@
         <button class="b2">Alterar texto 2</button>
         <button class="b3">Alterar texto 3</button>
 
-        <input type="checkbox" name="" id="tocar">
-        <label for="tocar">
-            <div class="bm">tocar musica</div>
-        </label>
-
     </div>
 
 </body>
@@ -70,18 +65,6 @@
     b1 = document.querySelector('.b1');
     b2 = document.querySelector('.b2');
     b3 = document.querySelector('.b3');
-
-    botaoMusica = document.querySelector('#tocar');
-    musica = new Audio('sons/luna-rise-part-one.mp3');
-    musica.loop = true
-
-    botaoMusica.addEventListener('change', () => {
-        if (musica.paused) {
-            musica.play()
-        } else {
-            musica.pause()
-        }
-    })
 
     altera(b1, 'b1')
     altera(b2, 'b2')
